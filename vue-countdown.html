@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue Countdown</title>
+    <meta name="description" content="Soon enough to be married with Polymer's Material Design.">
+
+    <link rel="stylesheet" href="vue-countdown.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.7/vue.min.js"></script>
+</head>
+
+<body id="demo" v-bind:class="{'alarm': isAlarm}">
+    
+        <div class="Countdown__container">
+            <section class="Start" v-if="!hasStarted">            
+                <form class="Start__form" v-on:submit="startTimer">
+                    <input 
+                        autofocus 
+                        type="text" 
+                        value="{{this.startingValue}}" 
+                        placeholder="How many seconds should the timer go?"
+                        v-model="startingValue">
+                    <button type="submit" class="btn btn-default">Start Timer</button>
+                </form>
+            </section>
+
+            <section class="During" v-if="hasStarted && !hasFinished">
+                <div id="During__body">
+                    
+                </div>
+                <button class="btn" v-if="!hasStopped" v-on:click="stopTimer">Stop Timer</button>
+                <button class="btn" v-if="hasStopped" v-on:click="startTimer">Continue Timer</button>
+            </section>
+
+            <section class="Finish" v-if="hasFinished">
+                <button class="Finish__button" v-on:click="stopAlarm" v-if="isAlarm">Stop Alarm</button>
+                <button class="Finish__button" v-on:click="restart">New Timer</button>
+            </section>
+        </div>
+
+    <script src="vue-countdown.js"></script>
+</body>
+</html>

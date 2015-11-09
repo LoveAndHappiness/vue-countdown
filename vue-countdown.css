@@ -1,0 +1,36 @@
+    html, body {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .alarm {
+        background: red;
+    }
+
+    .Countdown__container {
+        height: 100px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .During {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #During__body {
+        font-size: 10vw;
+    }
+
+    .Start__form {
+        display: flex;
+        justify-content: center;
+    }
+
+    .Finish__button {
+        flex: 1;
+    }
